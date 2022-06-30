@@ -103,7 +103,7 @@ def menu_list(update: Update, context: CallbackContext):
 # returns weather the current time is open or close for orders
 def time_in_range(current):
     start = datetime.time(10, 0, 0)
-    end = datetime.time(23, 00, 0)
+    end = datetime.time(22, 00, 0)
     return start <= current <= end
 
 
@@ -490,7 +490,9 @@ def checkout(update: Update, context: CallbackContext):
     user = update.message.from_user
     logger.info("User %s wants to checkout", user.first_name)
     # if cart is empty - just checks out without placing any order
-    if len(cart_dict) == 0:
+    if not startsession:
+        context.bot.send_message(chat_id=update.effective_chat.id, text="You did not start the session.")
+    elif len(cart_dict) == 0:
         reply_button = InlineKeyboardMarkup([
             [InlineKeyboardButton("Yes", callback_data="No_checkout"),
              InlineKeyboardButton("No", callback_data='no')]
