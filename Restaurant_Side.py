@@ -22,7 +22,7 @@ admin_ids = [967864205]
 
 
 # displays the current Menu with the prices.
-def Menu(update: Update, context: CallbackContext):
+def menu(update: Update, context: CallbackContext):
     if update.message.from_user.id in admin_ids:
         item_prices = {}
         with open("temp_menuitems.txt") as f:
@@ -71,6 +71,7 @@ def help_commands(update: Update, context: CallbackContext):
         context.bot.send_message(chat_id=update.effective_chat.id,
                                  text="/menu - to check the current menu list with prizes\n"
                                       "/scheme [item-name] - to activate the Try your Luck scheme(exact name)\n "
+                                      "/scheme_list - will display the current items under the list\n"
                                       "/show [YYYY-MM-DD] - to see the orders received on a particular date\n"
                                       "/maintenance - to set the bot to maintenance \n"
                                       "/online - to set the bot back online \n"
@@ -80,7 +81,10 @@ def help_commands(update: Update, context: CallbackContext):
                                       "/unavailable_list - displays the unavailable items \n"
                                       "/scheme_list - displays the items under the scheme \n"
                                       "/inquiries - shows all the collected inquiries \n"
-                                      "/help - displays all the usable commands")
+                                      "/help - displays all the usable commands\n\n"
+                                      "NOTE: \n"
+                                      "/available all - will set all the items to unavailable\n"
+                                      "/scheme deactivate - will deactivate the scheme")
     else:
         update.message.reply_text('You are not authorized to access this BOT')
 
@@ -293,7 +297,7 @@ def main():
 
     # reacting to the commands - according to the commands
     dp.add_handler(CommandHandler('feedback', feedback))
-    dp.add_handler(CommandHandler('menu', Menu))
+    dp.add_handler(CommandHandler('menu', menu))
     dp.add_handler(CommandHandler('scheme', activateScheme))
     dp.add_handler(CommandHandler('maintenance', maintenance))
     dp.add_handler(CommandHandler('online', online))

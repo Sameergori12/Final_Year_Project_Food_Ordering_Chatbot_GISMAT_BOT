@@ -1,0 +1,54 @@
+Name: Sameer Gori 
+Coordinates Latitude, Longitude: ('17.421366263362437', ' 78.40483911240604')
+Location: 24, Road No 2, Prashasan Nagar, Ward 95 Jubilee Hills, Greater Hyderabad Municipal Corporation Central Zone, Hyderabad, Shaikpet mandal, Hyderabad, Telangana, 500110, India 
+Phone Number: 1234567890 
+Order type: Online
+Date/time: 2022-07-01 22:34:02.743500 
+ 
+Mayonnaise	     1*29.0 
+Fried Onions	     1*29.0 
+Mutton	     1*199.0 
+Coco Colada	     1*119.0 
+Kiwi Punch	     1*119.0
+ 
+TOTAL AMOUNT: 	     ₹495.0
+#### 
+ 
+Name: Sameer Gori 
+Phone Number: 7075234341 
+Order type: Pickup
+Date/time: 2022-07-01 22:34:48.330579
+ 
+Mutton Mandi, Chicken Pakodi, Coke	     1*349.0 
+Mutton Mandi, Chicken Steak, Fish	     1*349.0 
+Chicken Mandi, Fish Steak, Roasted Chicken	     1*329.0
+ 
+TOTAL AMOUNT: 	     ₹1027.0
+#### 
+ 
+Name: Sameer Gori 
+Coordinates Latitude, Longitude: ('17.421366263362437', ' 78.40483911240604')
+Location: 24, Road No 2, Prashasan Nagar, Ward 95 Jubilee Hills, Greater Hyderabad Municipal Corporation Central Zone, Hyderabad, Shaikpet mandal, Hyderabad, Telangana, 500110, India 
+Phone Number: 7075234341 
+Order type: Online
+Date/time: 2022-07-01 22:35:46.687560 
+ 
+Chicken	     1*159.0 
+Mutton Mandi, Chicken Pakodi, Coke	     2*349.0
+ 
+TOTAL AMOUNT: 	     ₹857.0
+#### 
+ 
+Name: Sameer Gori 
+Phone Number: 7075334341 
+Order type: Pickup
+Date/time: 2022-07-01 22:39:37.193337
+ 
+Fruit Punch	     1*129.0 
+Mutton Mandi, Chicken Steak, Fish	     1*349.0 
+Chicken Mandi, Fish Steak, Roasted Chicken	     1*329.0 
+Lichi Sparkel	     1*119.0
+ 
+TOTAL AMOUNT: 	     ₹926.0
+#### 
+ 

@@ -52,6 +52,7 @@ def start(update: Update, context: CallbackContext):
                                    "6. Confirm checkout\n\n"
                                    "You can control me by sending these commands: \n \n"
                                    "/start_session - starts the session \n"
+                                   "/fullmenu - to display menu without starting the session\n"
                                    "/order_type - to change the order type \n"
                                    "/number [phone number] - to provide your phone number(Indian only)\n"
                                    "/locate [lat],[long] - to provide your delivery location(latitude, longitude)\n"
@@ -103,8 +104,15 @@ def menu_list(update: Update, context: CallbackContext):
 # returns weather the current time is open or close for orders
 def time_in_range(current):
     start = datetime.time(10, 0, 0)
-    end = datetime.time(22, 00, 0)
+    end = datetime.time(23, 00, 0)
     return start <= current <= end
+
+
+# to see the menu without starting the session with days specials
+def fullmenu(update: Update, context: CallbackContext):
+    context.bot.sendPhoto(chat_id=update.effective_chat.id, photo=open('images/dailymenu.png', 'rb'))
+    context.bot.sendPhoto(chat_id=update.effective_chat.id, photo=open('images/friday.png', 'rb'))
+    context.bot.sendPhoto(chat_id=update.effective_chat.id, photo=open('images/sunday.png', 'rb'))
 
 
 # displays the cart list
@@ -121,7 +129,7 @@ def cart_list(update: Update, context: CallbackContext):
         stir = ' \n'.join(car)
         stir += "\n \n" + "Total amount: " + "\t     ₹" + str(order_amt)
         # cart list will be displayed in the bot
-        context.bot.send_message(chat_id=update.effective_chat.id, text=f"Your Cart: {line_space}{stir}")
+        context.bot.send_message(chat_id=update.effective_chat.id, text=f"Your Cart: {line_space}{line_space}{stir}")
 
 
 # to delete the item from cart
@@ -316,7 +324,7 @@ def action(update: Update, context: CallbackContext):
                         context.bot.send_message(chat_id=update.effective_chat.id,
                                                  text="Sorry! you cannot checkout without providing your delivery "
                                                       "coordinates.")
-                    clear(update, context)
+        clear(update, context)
 
     elif choice == 'No_checkout':
         context.bot.send_message(chat_id=update.effective_chat.id, text="Checked Out")
@@ -626,6 +634,7 @@ def main():
     dp.add_handler(CommandHandler('coordinates_phone', coordphone))
     dp.add_handler(CommandHandler('coordinates_laptop', coordlaptop))
     dp.add_handler(CommandHandler('inquiry', inquiry))
+    dp.add_handler(CommandHandler('fullmenu', fullmenu))
     dp.add_handler(CallbackQueryHandler(action))
     dp.add_handler(MessageHandler(Filters.text & ~Filters.command, out_of_commands))
 
