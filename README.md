@@ -1,5 +1,4 @@
-# Final_Year_Project_Food_Ordering_Chatbot_GISMAT_BOT
-
+# FYP Food Ordering Chatbot
 
 # GISMAT Bot
 
